@@ -14,6 +14,10 @@ add_executable(pico-project
   main.c
 )
 
+# Make the stdio functions use USB rather than the serial pins
+pico_enable_stdio_usb(pico-project 1)
+pico_enable_stdio_uart(pico-project 0)
+
 # Pull in our pico_stdlib which pulls in commonly used features
 target_link_libraries(pico-project pico_stdlib)
 
